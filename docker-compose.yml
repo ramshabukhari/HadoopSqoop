@@ -1,0 +1,23 @@
+version: '2.1'
+services:
+
+######################################################
+# SQOOP SERVICES
+######################################################
+  sqoop:
+    build: ./docker/sqoop
+    container_name: sqoop
+    ports:
+      - 12000:12000
+    volumes:
+      - ./mnt/sqoop:/opt/sqoop
+
+
+######################################################
+# NETWORK
+######################################################
+
+# Change name of default network according to your base directory
+networks:
+  default:
+    name: hadoop-sqoop
